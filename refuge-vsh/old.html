@@ -1,0 +1,437 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+<title>Home</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+<!-- <link rel="shortcut icon" href=".ico" type="image/x-icon"> -->
+<style>
+* {box-sizing: border-box}
+
+/* Set height of body and the document to 100% */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial;
+}
+
+body {
+	color: white;
+    background-color: #2D2D2F;
+}
+    
+/* Style tab links */
+.tablink {
+    background-color: #E71E0F;
+    color: white;
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 14px 16px;
+    font-size: 17px;
+    width: 20%;
+}
+
+.tablink:hover {
+    background-color: #B9180C;
+}
+
+/* Style the tab content (and add height:100% for full page content) */
+.tabcontent {
+    color: white;
+    display: none;
+    padding: 60px 20px;
+    height: 100%;
+}
+
+#Home {background-color: #2D2D2F;}
+#Download {background-color: #2D2D2F;}
+#Instructions {background-color: #2D2D2F;}
+#Wiki {background-color: #2D2D2F;}
+#Contact {background-color: #2D2D2F;}
+
+.ver {
+    float: left;
+    width: 20%;
+}
+</style>
+<script>
+function diffImage(img) 
+{
+   if(img.src.match(/blank/)) img.src = "flashpoint_logo.jpg";
+   else img.src = "photo.jpg";
+}
+</script>
+</head>
+<body>
+
+<button class="tablink" onclick="openPage('Home', this, '#2D2D2F');home1()" id="defaultOpen"><i class="fas fa-home"></i> Home</button>
+<button class="tablink" onclick="openPage('Download', this, '#2D2D2F');dl1()"><i class="fas fa-download"></i> Downloads</button>
+<button class="tablink" onclick="openPage('Instructions', this, '#2D2D2F');inst1()"><i class="fas fa-book-open"></i> Instructions</button>
+<button class="tablink" onclick="openPage('Wiki', this, '#2D2D2F');wiki1()"><i class="fab fa-wikipedia-w"></i> Wiki</button>
+<button class="tablink" onclick="openPage('Contact', this, '#2D2D2F');cont1()"><i class="fas fa-phone"></i> Contact</button>
+
+
+<!-- Home Page Starts -->
+
+<div id="Home" class="tabcontent">
+    <h1>Welcome to BlueMaxima's Flashpoint!</h1>
+    <p>Flashpoint is a preservation project which aims to preserve web games, such as shockwave flash games, . . .
+    <br><br>
+    *Add more info abou the features of Flashpoint here*</p>
+</div>
+
+<!-- Home Page Ends -->
+
+
+
+<!-- Download Page Starts -->
+
+<div id="Download" class="tabcontent">
+<h1>Flashpoint Downloads</h1>
+<hr>
+<table>
+<tr>
+<td>
+<h2>Flashpoint Version: </h2>
+</td>
+<td>
+<select id="version_selector">
+    <option value="7">4.1 (latest)</option>
+    <option value="6">4.0</option>
+    <option value="5">3.3</option>
+    <option value="4">3.2</option>
+    <option value="3">3.1</option>
+    <option value="2">2.0</option>
+    <option value="1">1.4</option>
+    <option value="v">Older Versions</option>
+</select>
+</td>
+</tr>
+</table>
+
+<div id="7" class="versions">
+<strong>Description: </strong>Files for Flashpoint 4.1, uploaded 28th of August 2018.
+</div>
+<div id="6" class="versions" style="display:none">
+<strong>Description: </strong>The initial releases of Flashpoint 4.0, uploaded on the 12th of August, 2018.
+</div>
+<div id="5" class="versions" style="display:none">
+<strong>Description: </strong>BlueMaxima's Flashpoint 3.3, uploaded 17th July 2018.
+</div>
+<div id="4" class="versions" style="display:none">
+<strong>Description: </strong>BlueMaxima's Flashpoint 3.2, uploaded June 27th 2018.
+</div>
+<div id="3" class="versions" style="display:none">
+<strong>Description: </strong>BlueMaxima's Flashpoint 3.1, released June 9th 2018.
+</div>
+<div id="2" class="versions" style="display:none">
+<strong>Description: </strong>BlueMaxima's Flashpoint version 2.0, uploaded May 14th 2018
+<br><br>
+<strong>Note: </strong>due to a bug in the release I didn't notice related to Apache not making a log folder properly, you might need the Flashpoint-Patch file (can be found here) extracted over the top to make it all work. Apologies.
+</div>
+<div id="1" class="versions" style="display:none">
+<strong>Description: </strong>BlueMaxima's Flashpoint version 1.4, 05/05/2018.
+</div>
+<div id="v" class="versions" style="display:none">
+<strong>Description: </strong>These are old versions of Flashpoint previously uploaded before version 1.0, and don't have any real use today (if you want pre-KOTK, use version 1.4, if you don't, use the latest). These have nothing to do with the other Flashpoint Zero, the one used to help curators in the 3.0 revisions. Basically, unless you really need these and know why, don't download them.
+</div>
+<br>
+<hr>
+<br>
+<br>
+<h1>Flashpoint Archive Downloads</h1>
+<hr>
+<table>
+<tr>
+<td>
+<h2>Flashpoint Archive of: </h2>
+</td>
+<td>
+<select id="archive_selector">
+    <option selected disabled hidden>-- Select Archive --</option>
+    <option value="NGAFI">Newgrounds Auditorium + Flashpoint Infinity</option>
+    <option value="BBcom">BubbleBox.com</option>
+    <option value="SPcom">StickPage.com</option>
+    <option value="z0rde">z0r.de</option>
+    <option value="HRcom">HomestarRunner.com</option>
+    <option value="Dnet">Dagobah.net</option>
+    <option value="AGcom">AddictingGames.com</option>
+    <option value="ArmorGcom">ArmorGames.com</option>
+    <option value="NDcom">NotDoppler.com</option>
+    <option value="OMLcom">OneMoreLevel.com</option>
+    <option value="MGcom">MaxGames.com</option>
+    <option value="AKcom">Andkon.com</option>
+    <option value="NA">Newgrounds Auditorium</option>
+    <option value="Ycom">Yiczo.com</option>
+    <option value="Porg">Phinugamma.org</option>
+    <option value="AGold">ArmorGames.com (old)</option>
+</select>
+</td>
+</tr>
+</table>
+
+<div id="NGAFI" class="archives" style="display:none">
+<strong>Description: </strong>Newgrounds Auditorium + Flashpoint Infinity.
+<br><br>
+<strong>Date Added / Uploaded: </strong>12th of August, 2018
+</div>
+<div id="BBcom" class="archives" style="display:none">
+<strong>Description: </strong>An archive of the Bubblebox.com flash portal with a server and browser to experience the Flash content.
+<br><br>
+<strong>Date Added / Uploaded: </strong>26th of July, 2018
+</div>
+<div id="SPcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of StickPage.com with server and browser to browse the collection and play the content within.
+<br><br>
+<strong>Date Added / Uploaded: </strong>26th of July, 2018
+</div>
+<div id="z0rde" class="archives" style="display:none">
+<strong>Description: </strong>A backup of z0r.de's SWFs.
+<br><br>
+<strong>Date Added / Uploaded: </strong>26th of July, 2018
+</div>
+<div id="HRcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of the HomestarRunner.com website, with server tech and browser to allow for viewing of the Flash content. Hopefully complete. Identical to the Homestar Runner entry in Flashpoint Theatre.
+<br><br>
+<strong>Date Added / Uploaded: </strong>25th of July, 2018
+</div>
+<div id="Dnet" class="archives" style="display:none">
+<strong>Description: </strong>A backup of Dagobah.net's SWFs.
+<br><br>
+<strong>Date Added / Uploaded: </strong>24th of July, 2018
+</div>
+<div id="AGcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of AddictingGames.com, the Flash game portal, with the Flashpoint server and redirector in order to create the experience of browsing and playing Flash games on it.
+<br><br>
+<strong>Date Added / Uploaded: </strong>23th of July, 2018
+</div>
+<div id="ArmorGcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of ArmorGames.com, the Flash game portal, with the Flashpoint server and redirector in order to create the experience of browsing and playing Flash games on it. This one is a little odd; you'll only get the game pages individually.
+<br><br>
+<strong>Date Added / Uploaded: </strong>23th of July, 2018
+</div>
+<div id="NDcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of NotDoppler.com, the Flash game portal, with the Flashpoint server and redirector in order to create the experience of browsing and playing Flash games on it.
+<br><br>
+<strong>Date Added / Uploaded: </strong>23th of July, 2018
+</div>
+<div id="OMLcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of OneMoreLevel.com, the Flash game portal, with the Flashpoint server and redirector in order to create the experience of browsing and playing Flash games on it.
+<br><br>
+<strong>Date Added / Uploaded: </strong>23th of July, 2018
+</div>
+<div id="MGcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of MaxGames.com, the Flash game portal, with the Flashpoint server and redirector in order to recreate the experience of browsing and playing Flash games on it.
+<br><br>
+<strong>Date Added / Uploaded: </strong>23th of July, 2018
+</div>
+<div id="AKcom" class="archives" style="display:none">
+<strong>Description: </strong>A backup of Andkon.com, the Flash game portal, with the Flashpoint server and redirector in order to recreate the experience of browsing and playing Flash games on it.
+<br><br>
+<strong>Date Added / Uploaded: </strong>23th of July, 2018
+</div>
+<div id="NA" class="archives" style="display:none">
+<strong>Description: </strong>Newgrounds Auditorium 1.0, a collection of Flash animations from the website Newgrounds, taken roughly in July of 2018. Created by BlueMaxima and DarkMoe. Read the readme before usage.
+<br><br>
+<strong>Date Added / Uploaded: </strong>17th of July, 2018
+</div>
+<div id="Ycom" class="archives" style="display:none">
+<strong>Description: </strong>Full dump of PiczoGame.net & Yiczo.com. It's around 3GB and is filled with flash games, flash animations, flash loops, maybe one or two adult games I'm unsure but I'm sure you'll have fun with it. Also contains all 52 flash loops from http://www.j0g.com/thepast.htm too.
+<br><br>
+(Uploaded by Antz to Flashfreeze) 
+<br><br>
+<strong>Date Added / Uploaded: </strong>15th of July, 2018
+</div>
+<div id="Porg" class="archives" style="display:none">
+<strong>Description: </strong>Phinugamma.org's SWF files. Has files from other sites which have been saved for posterity.
+<br><br>
+<strong>Date Added / Uploaded: </strong>3rd of July, 2018
+</div>
+<div id="AGold" class="archives" style="display:none">
+<strong>Description: </strong>All of the SWF-format Flash games I was able to archive from ArmorGames.com using WinHTTrack on more-or-less default settings and a computer generated list of URLs. ArmorGames allows access to their games just by visiting "https://armorgames.com/(a number)" so I simply used the latest game published on the site as a base and downloaded every page from 1 to that, with attached SWF file, in order.
+<br><br>
+SWF-format Flash games and animations are a massive cornerstone of internet culture after the turn of the millenium, and it would be a shame to lose it all - this is the first part of an effort by me to get as much of it as possible.
+<br><br>
+SWF files are provided as is; can't guarantee they'll work without some kind of futzing as certain flash games did like to lock themself to one website, although a handful of files I tried in the standalone Flash player on Windows 10 did work as expected.
+<br><br>
+This archive was taken on Boxing Day, 2017.
+<br><br>
+<strong>Date Added / Uploaded: </strong>26th of December, 2017
+</div>
+
+<br>
+<hr>
+<br>
+<br>
+<h1>Other Downloads</h1>
+<hr>
+<br>
+<select id="alt_selector">
+    <option selected disabled hidden>-- Select Download --</option>
+    <option value="FP41D">FP41Data</option>
+    <option value="FP4D">FP4Data</option>
+    <option value="HWOB">Happy Wheels Offline Backup</option>
+    <option value="FPC">Flashpoint Core</option>
+    <option value="ranWMV">2000+ random WMVs from MateArcade.com</option>
+    <option value="WinBox">WinBox 3.11</option>
+    <option value="O1G">Over 1000 Games for Windows</option>
+    <option value="BMprof">BlueMaxima's Archive.org Page</option>
+</select>
+<br><br><br>
+<div id="FP41D" class="alts" style="display:none">
+<strong>Description: </strong>Data for Flashpoint Infinity 4.1.
+<br><br>
+<strong>Date Added / Uploaded: </strong>27th of August, 2018
+</div>
+<div id="FP4D" class="alts" style="display:none">
+<strong>Description: </strong>The initial releases of Flashpoint 4.0, uploaded on the 12th of August, 2018.
+<br><br>
+<strong>Date Added / Uploaded: </strong>12th of August, 2018
+</div>
+<div id="HWOB" class="alts" style="display:none">
+<strong>Description: </strong>A backup of Happy Wheels, with fully browsable and playable level database, from the beginning of the game to the 1st of August, 2018.
+<br><br>
+<strong>Date Added / Uploaded: </strong>11th of August, 2018
+</div>
+<div id="FPC" class="alts" style="display:none">
+<strong>Description: </strong>Flashpoint Core, the replacement for Flashpoint Zero. A smaller version of Flashpoint with one game per technology for curating and testing purposes.
+<br><br>
+<strong>Date Added / Uploaded: </strong>30th of July, 2018
+</div>
+<div id="ranWMV" class="alts" style="display:none">
+<strong>Description: </strong>In my efforts to secure SWFs for my ongoing Flash preservation project, these were accidentally downloaded to my hard drive. They're mid-2000s quality WMVs. I'm not entirely sure when the videos in question were made, the only time stamp saved was roughly March 2007, the site in question was around since 2005 so some of these may well be pre-YouTube. Either way I felt bad about deleting them outright, so here they are for anyone's perusal.
+<br><br>
+<strong>Date Added / Uploaded: </strong>10th of May, 2018
+</div>
+<div id="WinBox" class="alts" style="display:none">
+<strong>Description: </strong>A modified DOSBox build that runs Windows 3.11 nearly perfectly. Calmira II, a "desktop environment" is included pre-installed to help usage.
+<br><br>
+<strong>Date Added / Uploaded: </strong>17th of January, 2014
+</div>
+<div id="O1G" class="alts" style="display:none">
+<strong>Description: </strong>This was originally ripped from a burnt disk with "Over 1000 games of the world for Windows" written on it, so I don't know how legitimate this is. Shareware CDs are weird things.
+<br><br>
+<strong>Date Added / Uploaded: </strong>29th of March, 2012
+</div>
+<div id="BMprof" class="alts" style="display:none">
+<strong>Description: </strong><a href="https://archive.org/details/@bluemaxima">BlueMaxima's archive.org profile</a>
+</div>
+
+
+<br><br>
+</div>
+
+<!-- Download Page Ends -->
+
+
+
+<!-- Instruction Page Starts -->
+
+<div id="Instructions" class="tabcontent">
+  <h3>Instructions</h3>
+</div>
+
+<!-- Instruction Page Ends -->
+
+
+
+<!-- Wiki Page Starts -->
+
+<div id="Wiki" class="tabcontent">
+  <h3>Wiki</h3>
+</div>
+
+<!-- Wiki Page Ends -->
+
+
+
+<!-- Contact Page Starts -->
+
+<div id="Contact" class="tabcontent">
+  <h3>Contact</h3>
+</div>
+
+<!-- Contact Page Ends -->
+
+
+<!-- Scripts Start -->
+
+<script>
+function openPage(pageName,elmnt,color) {
+    var i, tabcontent, tablinks;
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+    tablinks = document.getElementsByClassName("tablink");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].style.backgroundColor = "";
+    }
+    document.getElementById(pageName).style.display = "block";
+    elmnt.style.backgroundColor = color;
+
+}
+// Get the element with id="defaultOpen" and click on it
+document.getElementById("defaultOpen").click();
+</script>
+
+<!-- Download Version Selector -->
+<script>
+$(function() {
+    $('#version_selector').change(function(){
+        $('.versions').hide();
+        $('#' + $(this).val()).show();
+    });
+});
+</script>
+
+<!-- Download Archive Selector -->
+<script>
+$(function() {
+    $('#archive_selector').change(function(){
+        $('.archives').hide();
+        $('#' + $(this).val()).show();
+    });
+});
+</script>
+
+<!-- Alternate Download Selector -->
+<script>
+$(function() {
+    $('#alt_selector').change(function(){
+        $('.alts').hide();
+        $('#' + $(this).val()).show();
+    });
+});
+</script>
+
+<!-- Tab Title Changer -->
+<script>
+function home1() {
+  parent.document.title = 'Home'
+}
+
+function dl1() {
+  parent.document.title = 'Downloads'
+}
+
+function inst1() {
+  parent.document.title = 'Instructions'
+}
+
+function wiki1() {
+  parent.document.title = 'Wiki'
+}
+
+function cont1() {
+  parent.document.title = 'Contact'
+}
+</script>
+
+<!-- Scripts End -->
+
+</body>
+</html> 
